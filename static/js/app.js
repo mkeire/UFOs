@@ -20,3 +20,19 @@ data.forEach((dataRow) => {
         }
     ); 
 });
+
+// Filter and present data when button is clicked
+function handleClick() {
+    let date = d3.select("#datetime").property("value");
+    let filteredData = tableData;
+    if (date) {
+            filteredData = filteredData.filter(row => row.datetime === date);
+            buildTable(filteredData);
+    };
+};
+
+// Listening for button click
+d3.selectAll("#filter-btn").on("click", handleClick);
+
+// Build table when page loads
+buildTable(tableData);
