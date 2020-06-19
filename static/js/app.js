@@ -7,7 +7,6 @@ var tbody = d3.select("tbody");
 // Clear table
 function buildTable(data) {
     tbody.html("");
-}
 
 // Loop through and append a row and cell for each value in data
 data.forEach((dataRow) => {
@@ -20,6 +19,7 @@ data.forEach((dataRow) => {
         }
     ); 
 });
+}
 
 // Filter and present data when button is clicked
 function handleClick() {
